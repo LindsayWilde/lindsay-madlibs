@@ -3,31 +3,32 @@ import React, { Component } from 'react';
 import Input from './input';
 import Content from './content';
 
+    const INITIAL_STATE = {
+        color:'',
+        pluralNoun: '',
+        adjectiveOne: '',
+        celebOne:'',
+        adjectiveTwo: '',
+        nounOne:'',
+        numberOne: '',
+        numberTwo:'',
+        nounTwo:'',
+        nounTwo:'',
+        adjectiveThree:'',
+        celebTwo:'',
+        celebThree:'',
+        adjectiveFour: '',
+        nounThree:'',
+        celebFour:'',
+        adjectiveFive:'',
+        contentVisable: false}
+
 class Card extends Component {
 
     constructor() {
         super()
 
-        this.state = {
-            color:'',
-            pluralNoun: '',
-            adjectiveOne: '',
-            celebOne:'',
-            adjectiveTwo: '',
-            nounOne:'',
-            numberOne: '',
-            numberTwo:'',
-            nounTwo:'',
-            nounTwo:'',
-            adjectiveThree:'',
-            celebTwo:'',
-            celebThree:'',
-            adjectiveFour: '',
-            nounThree:'',
-            celebFour:'',
-            adjectiveFive:'',
-            contentVisable: false
-        }
+        this.state = INITIAL_STATE
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleFormSubmit = this.handleFormSubmit.bind(this);
@@ -39,7 +40,12 @@ class Card extends Component {
 
     handleFormSubmit(event) {
         event.preventDefault()
-        this.setState({contentVisable: !this.state.contentVisable})
+
+        if(this.state.contentVisable) {
+            this.setState(INITIAL_STATE)
+        } else {
+            this.setState({contentVisable: !this.state.contentVisable})
+        }
     }
 
     render () {
