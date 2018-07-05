@@ -3,8 +3,9 @@ import React, { Component } from 'react';
 class Content extends Component {
     render() {
         const data = this.props.data;
-        
+
         return (
+        <div className="card__content">
             <p>
               Ladies and gentlemen, this is <b>{data.color}</b> Barber, your sportscaster,
                bringing you the last inning of the game between the Cleveland <b>{data.pluralNoun}</b>
@@ -21,6 +22,7 @@ class Content extends Component {
                  throws it to first base for an out, and the game is over.
                  And the Yankees move into second place in the <b>{data.adjectiveFive}</b> League!
             </p>
+        </div>
         )
     }
 }
