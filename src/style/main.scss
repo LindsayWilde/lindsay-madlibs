@@ -62,8 +62,13 @@
 
     &__inputs {
         display: grid;
-        grid-template-rows: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 27px);
         grid-template-columns: repeat(4, 1fr);
+
+        grid-row-gap: 120px;
+        margin-top: 66px;
+        margin-left: 83px;
+        margin-right: 83px;
 
         justify-items: center;
         align-items: center;
@@ -76,9 +81,10 @@
     text-align: center;
     display: grid;
     grid-template-columns: [number-s] 26px [number-e input-s] 1fr [input-e];
+    grid-column-gap: 8px;
+    height: 47px;
     &__title{
         grid-column: input-s/input-e;
-        border-top: 1px solid #b3b3b3;
         color: #b3b3b3;
         font-size: 12px;
         font-weight: 300;
@@ -88,6 +94,14 @@
         border: none;
         font-size: 15px;
         text-align: inherit;
+        padding: 4px 0;
+        border-bottom: 1px solid #b3b3b3;
+        transition: all 1s ease;
+
+        &:focus {
+            outline: none;
+            border-bottom: 1px solid #00CB79;
+        }
     }
     &__number{
         grid-column: number-s/number-e;
@@ -97,6 +111,8 @@
         line-height: 24px;
         text-align: center;
         padding-top: 1px;
+        height: 26px;
+        width: 25px;
         border-radius: 50%;
     }
 }
