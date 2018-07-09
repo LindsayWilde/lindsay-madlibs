@@ -20,7 +20,7 @@
     background-color: rgba(207, 207, 207, 0.3);
     display: grid;
     justify-items:center;
-    grid-template-rows: [header-s] 218px [header-e card-s] 994px [card-e];
+    grid-template-rows: [header-s] 218px [header-e card-s] minmax(736px, 994px) [card-e];
 }
 
 .header {
@@ -95,16 +95,17 @@
     }
     button {
         justify-self: center;
-        transform: translateY(50%);
 
     }
 
     &__generate {
         background-color: #00CB79;
+        transform: translateY(-350px);
         @include button;
     }
     &__clear {
         background-color: #45B0E5;
+        transform: translateY(50%);
         @include button;
     }
     &__content {
